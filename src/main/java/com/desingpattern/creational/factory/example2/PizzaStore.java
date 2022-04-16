@@ -1,0 +1,19 @@
+package com.desingpattern.creational.factory.example2;
+
+public abstract class PizzaStore {
+
+    public Pizza orderPizza(String type) {
+        Pizza pizza = null;
+        pizza = createPizza(type);
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+
+        return pizza;
+    }
+
+    protected abstract Pizza createPizza(String type); //factory method.
+
+
+}
